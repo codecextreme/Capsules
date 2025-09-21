@@ -2,12 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./LandingPage.css";
 import { FiArrowUpRight } from "react-icons/fi";
 import gsap from "gsap";
-import {
-  FaInstagram,
-  FaLinkedin,
-  FaDribbble,
-  FaBehance,
-} from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaDribbble, FaBehance } from "react-icons/fa";
 
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -171,36 +166,37 @@ export default function LandingPage() {
                 </li>
               ))}
             </ul>
-             <div className="circle-p">
-            <div className="circles1">
-              <div
-                className="circle1"
-                ref={(el) => (circleIconsRef.current[0] = el)}
-              >
-                <FaLinkedin size={18} />
+            <div className="circle-p">
+              <div className="circles1">
+                <div
+                  className="circle1"
+                  ref={(el) => (circleIconsRef.current[0] = el)}
+                >
+                  <FaLinkedin size={18} />
+                </div>
+                <div
+                  className="circle1"
+                  ref={(el) => (circleIconsRef.current[1] = el)}
+                >
+                  <FaInstagram size={18} />
+                </div>
+                <div
+                  className="circle1"
+                  ref={(el) => (circleIconsRef.current[2] = el)}
+                >
+                  <FaDribbble size={18} />
+                </div>
+                <div
+                  className="circle1"
+                  ref={(el) => (circleIconsRef.current[3] = el)}
+                >
+                  <FaBehance size={18} />
+                </div>
               </div>
-              <div
-                className="circle1"
-                ref={(el) => (circleIconsRef.current[1] = el)}
-              >
-                <FaInstagram size={18} />
-              </div>
-              <div
-                className="circle1"
-                ref={(el) => (circleIconsRef.current[2] = el)}
-              >
-                <FaDribbble size={18} />
-              </div>
-              <div
-                className="circle1"
-                ref={(el) => (circleIconsRef.current[3] = el)}
-              >
-                <FaBehance size={18} />
-              </div>
-            </div>
-            <p>
-This website is just the concept work <br />
-done by—Fahad to showcase our capabilities.</p>
+              <p>
+                This website is just the concept work <br />
+                done by—Fahad to showcase our capabilities.
+              </p>
             </div>
           </div>
 
