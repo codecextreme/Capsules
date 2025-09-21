@@ -1,0 +1,202 @@
+.footer {
+  width: 100%;
+  margin-left: 0px;
+  border-radius: 0px;
+  height: 100vh;
+  background: url(../../assets/Media/Images/a1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.footer-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  backdrop-filter: blur(2px); /* blur background */
+  background-color: rgba(255, 255, 255, 0.463); /* optional tint */
+}
+
+
+/* Content */
+.footer-content {
+  color: #2b2b2b;
+  padding: 10px 40px 0px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content h1 {
+  font-size: 100px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-col {
+  width: 300px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* thin underline */
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.footer-col ul li .arrow {
+  font-size: 14px;
+  margin-left: 20px; /* space between text & arrow */
+  color: #000000;
+  
+}
+
+/* Input Styling */
+.input-group {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #33333381;
+  max-width: 350px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px 0;
+  background: transparent;
+  font-size: 16px;
+}
+
+.input-group span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.contact-section {
+  margin-bottom: 25px; /* distance between each block */
+}
+
+.contact-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contact-section p {
+  font-size: 12px;
+  font-weight: 400;
+  margin: 2px 0;
+  color: #333; /* softer than headings */
+}
+
+
+
+
+
+.floor{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    
+}
+
+.floor ul{
+    display: flex;
+    gap: 20px;
+}
+
+.floor ul li{
+    list-style: none;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.floor p{
+    font-weight: 200;
+    font-size: 16px;
+}
+
+
+
+
+.circles{
+    display: flex;
+    margin-top: -10px;
+}
+
+
+.circle {
+  width: 45px;
+  height: 45px;
+  border: 1.5px solid #333;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Background fill animation */
+.circle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: #333;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+  z-index: 0; /* stay behind icon */
+}
+
+.circle:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Icon stays on top */
+.circle svg {
+  position: relative;
+  z-index: 1;
+  color: #333; /* icon turns white when hover */
+  transition: color 0.3s ease;
+}
+
+.circle:hover svg {
+  color: rgb(255, 255, 255); /* optional */
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/thegoodmonolith");
+
+:root {
+  --color-offwhite: #f8f6f2;
+  --color-offblack: #302b27;
+  --color-offblack-transparent: rgba(211, 206, 201, 0.2);
+  --color-overlay-dark: rgba(0, 0, 0, 0.4);
+  --font-main: "Inter", sans-serif;
+  --font-mono: "TheGoodMonolith", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-offwhite);
+  color: var(--color-offblack);
+  overflow-x: hidden;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+
+
+/* Moving background text */
+.moving-text {
+  position: absolute;
+  top: 36%;
+  left: 100%;
+  white-space: nowrap;
+  font-size: 5rem;
+  font-weight: 900;
+  pointer-events: none;
+  color: white;
+  z-index: 0;
+}
+
+.moving-text h1{
+  color: #ffffff;
+  font-family: "HelveticaNeueBold", sans-serif;
+  font-size: 8rem;
+}
+
+.video-wrapper {
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#video-container {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background-color: var(--color-offblack);
+  position: relative;
+  filter: blur(0px);
+  clip-path: inset(0 0 0 0);
+  transition: border-radius 0.3s ease;
+}
+
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-offblack-transparent);
+  color: var(--color-offwhite);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  clip-path: inset(100% 0 0 0);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+.video-overlay .caption {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  transform: translateY(30px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.video-overlay .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  filter: blur(10px);
+  transform: scale(1.1);
+}
+
+.video-overlay h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  transform: translateY(30px);
+  text-transform: uppercase;
+}
+
+.video-overlay p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 32ch;
+  margin: 0 auto 1rem;
+  transform: translateY(30px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Moving background text behind video */
+.moving-text {
+  position: absolute;
+  left: 0;
+  white-space: nowrap;
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  z-index: 0; /* behind video-container */
+}
+
+
+
+
+
+
+
+
+
+
+
+

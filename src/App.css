@@ -1,0 +1,22 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: 'Host Grotesk', sans-serif;
+
+
+  
+  
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  overflow-x: hidden;        /* Prevent horizontal scroll */
+}

@@ -1,0 +1,81 @@
+/* .landing-container1 {
+  position: relative;
+  min-height: 100vh;
+  background: #1e1b19;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.giant-title {
+  margin: 0;
+  line-height: 0.9;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: clamp(150px, 24vw, 260px);
+  display: inline-block;
+}
+
+.giant-letter {
+  display: inline-block;
+  transform-origin: right center;
+  will-change: transform, opacity;
+
+  transform: scaleX(0);
+  opacity: 0;
+
+  background: linear-gradient(to bottom, #d5c8b7, #f5f2eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.giant-title.animate .giant-letter {
+  animation: letterIn 0.72s cubic-bezier(.22,.9,.35,1) forwards;
+}
+
+.giant-letter.reg {
+  font-size: 0.22em;
+  vertical-align: baseline;
+  position: relative;
+  bottom: -0.12em;
+  transform-origin: center center;
+}
+
+.giant-letter.space {
+  width: 0.38em;
+  display: inline-block;
+  transform: none;
+  opacity: 1;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+@keyframes letterIn {
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .giant-letter {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+} */

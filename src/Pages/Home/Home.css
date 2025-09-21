@@ -1,0 +1,183 @@
+.home {
+  background-color: #181717;
+  padding-top: 8px;
+  scrollbar-width: none; /* hide scrollbar in Firefox */
+}
+
+
+/* 🔹 Text container */
+.description {
+  position: relative;
+  max-width: 90%;
+  margin: 150px 0 0 20px;
+  text-align: left;
+  color: white;
+  overflow: hidden;
+  font-family: 'Host Grotesk', sans-serif;
+
+}
+
+.description h1 {
+  z-index: 1;
+  font-weight: 400;
+  font-size: 67px;
+  line-height: 70px;
+}
+
+/* 🔹 Overlay for shrinking effect */
+.description .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #181717f3;
+  z-index: 2;
+  pointer-events: none;
+  will-change: height;
+  transition: height 0.05s linear;
+}
+
+/* 🔹 Moving text reveal */
+.text-reveal {
+  width: 100%;
+  margin-top: 150px;
+  font-weight: 400;
+  line-height: 0;
+  overflow: hidden;
+  margin-left: 30px;
+}
+
+.text-reveal .text-line {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.text-reveal h1 {
+
+  color: rgb(244, 239, 231);
+  position: relative;
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 160px;
+  z-index: 2;
+  will-change: transform;
+  transition: transform 0.9s linear;
+}
+
+/* 🔹 Overlay mask for each line */
+.text-reveal .text-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--mask-height, 60%);
+  background: #181717;
+  z-index: 3;
+  transition: height 0.09s linear;
+  will-change: height;
+}
+
+
+
+
+
+.text-reveal .text-line.top::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--mask-height, 100%);
+  background: #181717;
+  z-index: 3;
+  transition: height 0.6s linear;
+}
+
+.text-reveal .text-line.bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* 👈 key difference */
+  left: 0;
+  width: 100%;
+  height: var(--mask-height, 100%);
+  background: #181717;
+  z-index: 3;
+  transition: height 0.8s linear;
+}
+
+
+.description2{
+  text-align: center;
+  margin-top: 150px;
+}
+
+
+.hover-text {
+  position: relative;
+  font-size: 67px;
+  font-weight: 400;
+  line-height: 60px;
+  color: rgb(244, 239, 231); 
+}
+
+.pill-effect{
+  color: #b3a898; 
+  display: inline-block;
+}
+
+
+
+.pill-effect::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* adjust gap from text */
+  width: 100%;
+  height: 4px; /* line thickness */
+  background: #b3a898;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.pill-effect:hover::after {
+  transform: scaleX(0);
+}
+
+
+
+
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 150px;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 80s linear infinite;
+}
+
+.marquee-content span {
+  display: inline-block;
+  padding-right: 2rem; /* space between repeats */
+  font-size: 150px;
+  font-weight: 400;
+  color: rgb(244, 239, 231);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

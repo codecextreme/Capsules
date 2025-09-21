@@ -1,0 +1,336 @@
+/* --- GENERAL LAYOUT --- */
+.hero {
+  position: relative;
+  height: 97vh;
+  width: 99%;
+  border-radius: 40px;
+  overflow: hidden;
+  color: white;
+  margin-left: 0.5%;
+}
+
+.hero-bg {
+  background: url("../../assets/Media/Images/cap1.png") center/cover no-repeat;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+}
+
+.hero-title {
+  font-size: 10rem;
+  font-family: 'Host Grotesk', sans-serif;
+  margin-top: 3px;
+  margin-left: 15px;
+  letter-spacing: -5px;
+  font-weight: 500;
+  position: absolute;
+}
+
+.reserve-btn {
+  background: #F4EFE7;
+  border: none;
+  height: 44px;
+  margin-left: 1120px;
+  margin-top: 20px;
+  padding: 0 5px 0 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+.reserve-text {
+  position: relative;
+  height: 20px;
+  width: 60px;
+  overflow: hidden;
+}
+
+.reserve-word {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  color: #2A2725;
+  transition: transform 0.9s cubic-bezier(.2, .9, .2, 1);
+}
+
+.reserve-word.first {
+  transform: translateY(0%);
+}
+.reserve-word.second {
+  transform: translateY(100%);
+}
+.reserve-btn:hover .reserve-word.first {
+  transform: translateY(-100%);
+}
+.reserve-btn:hover .reserve-word.second {
+  transform: translateY(0%);
+}
+
+.reserve-icon {
+  width: 35px;
+  height: 35px;
+  background-color: #2A2725;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-tagline {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.hero-desc {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+  font-size: 0.8rem;
+  max-width: 250px;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* --- MENU BUTTON --- */
+.menu-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f4efe7;
+  color: black;
+  border: none;
+  padding: 5px 5px 5px 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: 'Host Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  z-index: 10000;
+}
+
+.menu-label {
+  color: #2A2725;
+}
+
+.menu-icon-wrapper {
+  background-color: #2A2725;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon {
+  width: 16px;
+  height: 12px;
+  position: relative;
+}
+
+.menu-icon span {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  left: 0;
+  transition: all 0.4s ease;
+}
+
+.menu-icon span:nth-child(1) { top: 0; }
+.menu-icon span:nth-child(2) { top: 5px; }
+.menu-icon span:nth-child(3) { top: 10px; }
+
+.menu-btn.open .menu-icon span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 5px;
+}
+.menu-btn.open .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.open .menu-icon span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 5px;
+}
+
+/* --- EXPANDING MENU PANEL (cleaned, single version) --- */
+.expanding-menu {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transform-origin: center bottom;
+  width: 99vw;
+  height: 97vh;
+  background: #2A2725;
+  border-radius: 40px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s ease;
+  z-index: 9999;
+  display: flex;   /* flex for left & right */
+  flex-direction: row;
+  opacity: 1;
+  pointer-events: none;
+  padding: 8px;
+}
+
+.expanding-menu.open {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Left side */
+.left-menu {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.menu-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-links li {
+  font-size: 54px;
+  line-height: 1;
+  color: #D9CDBF;
+  font-family: 'Host Grotesk', sans-serif;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.menu-links li:hover {
+  color: #ffffff;
+}
+
+.circle-p{
+  display: flex;
+  margin-top: 140px;
+ 
+}
+
+.circle-p p{
+  margin-left: 50px;
+  font-size: 12px;
+  font-weight: 200;
+  margin-top: 6px;
+}
+
+/* Right side */
+.right-menu {
+  width: 30%;
+  height: 94vh;
+  border-radius: 32px;
+  background: url(../../assets/Media/Images/cap2.png);
+   background-size: cover;       /* make sure image covers fully */
+  background-position: center;  /* always focus on center part */
+  background-repeat: no-repeat;
+  margin-left: auto;
+   position: relative; /* needed for absolute text */
+  overflow: hidden;
+}
+
+/* Marquee container */
+.marquee {
+  position: absolute;
+  bottom: 20%;   /* place it at bottom of the image */
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Actual scrolling text */
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;  /* push start off screen */
+  font-size: 200px;
+  font-weight: 600;
+  color: white;        /* contrast against image */
+  animation: marquee 160s linear infinite;
+}
+
+/* Keyframes for moving text */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Social circles (kept original) */
+.circles1 {
+  display: flex;
+}
+
+.circle1 {
+  width: 45px;
+  height: 45px;
+  border: 1.5px solid #b1a696c4;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: rgba(207, 167, 167, 0.9);
+  transition: color 0.3s ease;
+}
+
+/* Background fill animation */
+.circle1::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: #b1a696c4;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+  z-index: 0; /* stay behind icon */
+}
+
+.circle1:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Icon stays on top */
+.circle1 svg {
+  position: relative;
+  z-index: 1;
+  color: white; /* icon turns white when hover */
+  transition: color 0.3s ease;
+}
+
+.circle1:hover svg {
+  color: black; /* optional */
+}
+
+/* --- DISABLE SCROLL ON OPEN MENU --- */
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
