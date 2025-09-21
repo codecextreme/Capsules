@@ -31,14 +31,14 @@
   background: #F4EFE7;
   border: none;
   height: 44px;
-  margin-left: 1120px;
-  margin-top: 20px;
   padding: 0 5px 0 18px;
   border-radius: 999px;
   display: flex;
   align-items: center;
   cursor: pointer;
   position: absolute;
+  top: 20px;     /* keep it 20px from the top */
+  right: 20px;   /* keep it 20px from the right */
   font-weight: 300;
   overflow: hidden;
 }
@@ -166,7 +166,7 @@
   top: 5px;
 }
 
-/* --- EXPANDING MENU PANEL (cleaned, single version) --- */
+/* --- EXPANDING MENU PANEL --- */
 .expanding-menu {
   position: fixed;
   left: 50%;
@@ -179,7 +179,7 @@
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 0.4s ease;
   z-index: 9999;
-  display: flex;   /* flex for left & right */
+  display: flex;
   flex-direction: row;
   opacity: 1;
   pointer-events: none;
@@ -192,12 +192,11 @@
   pointer-events: auto;
 }
 
-/* Left side */
 .left-menu {
   width: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* pushes menu-links top, circle-p bottom */
   margin-left: 20px;
   margin-top: 20px;
 }
@@ -222,18 +221,18 @@
   color: #ffffff;
 }
 
-.circle-p{
+.circle-p {
+  margin-top: 0; /* remove fixed margin */
   display: flex;
-  margin-top: 140px;
- 
 }
 
-.circle-p p{
-  margin-left: 50px;
-  font-size: 12px;
+.circle-p p {
+  margin-left: 3rem;   /* scales with font size instead of fixed px */
+  font-size: 0.9rem;   /* ~14px on most browsers */
   font-weight: 200;
-  margin-top: 6px;
+  margin-top: 0.4rem;  /* relative vertical spacing */
 }
+
 
 /* Right side */
 .right-menu {
@@ -241,44 +240,38 @@
   height: 94vh;
   border-radius: 32px;
   background: url(../../assets/Media/Images/cap2.png);
-   background-size: cover;       /* make sure image covers fully */
-  background-position: center;  /* always focus on center part */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   margin-left: auto;
-   position: relative; /* needed for absolute text */
+  position: relative;
   overflow: hidden;
 }
 
-/* Marquee container */
+/* Marquee */
 .marquee {
   position: absolute;
-  bottom: 20%;   /* place it at bottom of the image */
+  bottom: 20%;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
 
-/* Actual scrolling text */
 .marquee span {
   display: inline-block;
-  padding-left: 100%;  /* push start off screen */
+  padding-left: 100%;
   font-size: 200px;
   font-weight: 600;
-  color: white;        /* contrast against image */
+  color: white;
   animation: marquee 160s linear infinite;
 }
 
-/* Keyframes for moving text */
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
-/* Social circles (kept original) */
+/* Social circles */
 .circles1 {
   display: flex;
 }
@@ -298,7 +291,6 @@
   transition: color 0.3s ease;
 }
 
-/* Background fill animation */
 .circle1::before {
   content: "";
   position: absolute;
@@ -310,27 +302,102 @@
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.4s ease;
-  z-index: 0; /* stay behind icon */
+  z-index: 0;
 }
 
 .circle1:hover::before {
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Icon stays on top */
 .circle1 svg {
   position: relative;
   z-index: 1;
-  color: white; /* icon turns white when hover */
+  color: white;
   transition: color 0.3s ease;
 }
 
 .circle1:hover svg {
-  color: black; /* optional */
+  color: black;
 }
 
 /* --- DISABLE SCROLL ON OPEN MENU --- */
 .no-scroll {
   overflow: hidden;
   height: 100vh;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+
+  .menu-links li {
+    font-size: 36px;
+  }
+
+  .marquee span {
+    font-size: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 4rem;
+    letter-spacing: -2px;
+  }
+
+  .hero-tagline {
+    font-size: 1.5rem;
+  }
+
+  .hero-desc {
+    font-size: 0.7rem;
+    max-width: 200px;
+  }
+
+  .expanding-menu {
+    flex-direction: column;
+  }
+
+  .left-menu {
+    width: 100%;
+  }
+
+  .right-menu {
+    display: none;
+  }
+
+  .menu-links li {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .reserve-btn {
+    height: 38px;
+    padding: 0 12px;
+  }
+
+  .reserve-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+
+  .hero-desc {
+    font-size: 0.65rem;
+    max-width: 160px;
+  }
+
+  .menu-links li {
+    font-size: 22px;
+  }
 }
